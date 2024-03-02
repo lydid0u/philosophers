@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 04:45:00 by lboudjel          #+#    #+#             */
-/*   Updated: 2024/02/29 22:21:23 by lboudjel         ###   ########.fr       */
+/*   Updated: 2024/03/02 03:29:11 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,9 @@ void	*routine_one_philo(void *structure)
 		printf("%lld %i %s\n", get_time() - phil[0].whattimeisit,
 			phil[0].philo_id, "died");
 		pthread_mutex_unlock(&phil[0].args->print);
+		free(phil);
 		return (NULL);
 	}
+	free(phil);
 	return (NULL);
 }
